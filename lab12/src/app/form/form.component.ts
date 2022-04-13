@@ -10,10 +10,15 @@ import { EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  @Output() sizeChange = new EventEmitter<Post>();
+  @Output() sizeChange = new EventEmitter<any>();
   task:Post = new Post()
 
   constructor() { }
+
+  addPost(){
+    this.sizeChange.emit(this.task)
+    this.task=new Post()
+  }
 
   ngOnInit(): void {
   }

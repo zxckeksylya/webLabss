@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-table',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
+  items:Post[]=[];
+
+  @Input() item?:Post;
+
   constructor() { }
 
+  addPost(){
+    console.log(this.item?.text)
+    this.items.push(this.item!)
+  }
   ngOnInit(): void {
   }
 

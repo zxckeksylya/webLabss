@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {Post} from './post.model'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lab12';
-  task?:Task;
+  task?:Post;
+
+  addPost(newTask:any){
+    this.task = newTask;
+    console.log(this.task?.text);
+  }
 }
