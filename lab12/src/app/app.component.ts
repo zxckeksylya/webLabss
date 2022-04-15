@@ -6,11 +6,28 @@ import {Post} from './post.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lab12';
-  task?:Post;
+  posts:Post[]=[];
 
-  addPost(newTask:any){
-    this.task = newTask;
-    console.log(this.task?.text);
+  addPost(newPost:Post):void{
+    if(newPost.id==0||newPost.id==null){
+      newPost.id=this.generateID()
+    }
+    newPost.date=new Date();
+    this.posts.push(newPost);
+  }
+  getPost(key:number):Post{
+    return this.posts.find(p=>p.id==key)!
+  }
+
+  deletePost(key:number){
+    let index = this.posts.findIndex(p=>p.id==key);
+    this.posts.splice(index,1)
+  }
+  private generateID():number{
+    let candidate:number=100;
+    while(this.getPost(candidate)!=null){
+      candidate++
+    }
+    return candidate;
   }
 }

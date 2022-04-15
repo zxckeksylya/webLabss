@@ -1,8 +1,14 @@
-<p>table works!</p>
-<ul>
-    <li *ngFor="let item of items">
-        {{item.text}}
-    </li>
-</ul>
-
-<button (click)="addPost()">newAdd</button>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>data</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.date | date}}</td>
+        <td><button (click)="deletePost(post.id!)">delete</button></td>
+    </tr>
+</table>

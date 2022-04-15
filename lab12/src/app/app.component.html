@@ -1,2 +1,2 @@
 <app-form (sizeChange)="addPost($event)"></app-form>
-<app-table [item]="task"></app-table>
+<app-table [posts]="posts" (deletedPost)="deletePost($event)"></app-table>

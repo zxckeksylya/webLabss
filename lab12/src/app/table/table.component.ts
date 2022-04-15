@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from '../post.model';
 
 @Component({
@@ -8,17 +8,16 @@ import { Post } from '../post.model';
 })
 export class TableComponent implements OnInit {
 
-  items:Post[]=[];
+  
 
-  @Input() item?:Post;
+  @Input() posts:Post[]=[];
+  @Output() deletedPost = new EventEmitter<number>()
 
   constructor() { }
-
-  addPost(){
-    console.log(this.item?.text)
-    this.items.push(this.item!)
-  }
   ngOnInit(): void {
   }
 
+  deletePost(key:number){
+    this.deletedPost.emit(key);
+  }
 }
