@@ -15,6 +15,7 @@ export class AppComponent {
     newPost.date=new Date();
     this.posts.push(newPost);
   }
+  
   getPost(key:number):Post{
     return this.posts.find(p=>p.id==key)!
   }
@@ -23,6 +24,7 @@ export class AppComponent {
     let index = this.posts.findIndex(p=>p.id==key);
     this.posts.splice(index,1)
   }
+
   private generateID():number{
     let candidate:number=100;
     while(this.getPost(candidate)!=null){

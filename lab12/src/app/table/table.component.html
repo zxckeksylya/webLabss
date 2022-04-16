@@ -1,14 +1,11 @@
-<table>
-    <tr>
-        <th>ID</th>
-        <th>title</th>
-        <th>data</th>
-        <th></th>
-    </tr>
-    <tr *ngFor="let post of posts">
-        <td>{{post.id}}</td>
-        <td>{{post.title}}</td>
-        <td>{{post.date | date}}</td>
-        <td><button (click)="deletePost(post.id!)">delete</button></td>
-    </tr>
-</table>
+<ul class="list">
+    <li class="list__item" *ngFor="let post of posts">
+        <div class="list__item-header">
+            <h3>{{post.title}}</h3>
+            <span>{{post.date|date}}</span>
+        </div>
+        <div class="list__item-text">
+            <p>{{post.text}}</p>
+        </div>
+    </li>
+</ul>

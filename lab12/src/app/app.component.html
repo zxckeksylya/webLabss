@@ -1,2 +1,6 @@
-<app-form (sizeChange)="addPost($event)"></app-form>
-<app-table [posts]="posts" (deletedPost)="deletePost($event)"></app-table>
+<div class="container">
+    <div class="wrapper">
+        <app-form (sizeChange)="addPost($event)"></app-form>
+        <app-table [posts]="posts" (deletedPost)="deletePost($event)"></app-table>
+    </div>
+</div>
