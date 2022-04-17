@@ -1,0 +1,43 @@
+@import "../../colors.scss";
+
+.list{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    &__item{
+        display: block;
+        list-style-type: none;
+        margin-bottom:10px ;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            border: 1px solid $nineth-ton;
+            border-top-left-radius: 10px ;
+            border-top-right-radius: 10px ;
+            border-bottom: 0px; 
+            color: $first-ton;
+            background-color: $seventh-ton;
+
+        }
+        &-text{
+            padding: 10px;
+            border: 1px solid $nineth-ton;
+            border-bottom-left-radius: 10px ;
+            border-bottom-right-radius: 10px ;
+            background-color: $fourth-ton;
+        }
+    }
+    
+}
+@media screen and (max-width:1300px) {
+    .list{
+        padding: 10px 0;
+    }
+    
+}
