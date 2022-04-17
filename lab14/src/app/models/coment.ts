@@ -1,8 +1,8 @@
-export class Post{
+export class Coment{
     constructor(
         public id?:number,
-        public title?:string,
+        public userId?:number,
         public text?:string,
-        public date?:Date,
+        public date?:Date
     ){}
 }

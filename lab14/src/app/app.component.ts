@@ -1,35 +1,15 @@
-import { Component } from '@angular/core';
-import {Post} from './post.model'
+import { Component, OnInit } from '@angular/core';
+import {Post} from './models/post'
+import { PostReposytory } from './services/posts-repository';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  posts:Post[]=[];
+export class AppComponent implements OnInit {
 
-  addPost(newPost:Post):void{
-    if(newPost.id==0||newPost.id==null){
-      newPost.id=this.generateID()
-    }
-    newPost.date=new Date();
-    this.posts.push(newPost);
-  }
-  
-  getPost(key:number):Post{
-    return this.posts.find(p=>p.id==key)!
+  ngOnInit(): void {
+    
   }
 
-  deletePost(key:number){
-    let index = this.posts.findIndex(p=>p.id==key);
-    this.posts.splice(index,1)
-  }
-
-  private generateID():number{
-    let candidate:number=100;
-    while(this.getPost(candidate)!=null){
-      candidate++
-    }
-    return candidate;
-  }
 }

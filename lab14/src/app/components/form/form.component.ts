@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Post} from '../post.model'
+import { Post} from '../../models/post'
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { PostReposytory } from 'src/app/services/posts-repository';
 
 @Component({
   selector: 'app-form',
@@ -9,14 +10,12 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-
-  @Output() sizeChange = new EventEmitter<any>();
   post:Post = new Post()
 
-  constructor() { }
+  constructor(private data:PostReposytory) { }
 
   addPost():void{
-    this.sizeChange.emit(this.post)
+    this.data.addPost(this.post)
     this.post=new Post()
   }
 
