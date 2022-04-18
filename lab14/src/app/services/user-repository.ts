@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { User } from "../models/user";
 import { StaticData } from "./staticData";
-
 @Injectable({
     providedIn:'root'
 })
@@ -13,22 +12,20 @@ export class UserRepository{
         this.data.getUsers().forEach(p=>this.users.push(p))
     }
 
-    getUsers():User[]{
+    public getUsers():User[]{
         return this.users;
     }
 
-    getUser(id:number):User{
+    public getUser(id:number):User{
         return this.users.find(p=>p.id==id)!
     }
 
-    deleteUser(id:number):void{
+    public deleteUser(id:number):void{
         let index = this.users.findIndex(p=>p.id==id);
         this.users.splice(index,1);
     }
 
-    getIdSelectedUser():number{
+    public getIdSelectedUser():number{
         return this.idOfSelectedUser;
     }
-
-
 }

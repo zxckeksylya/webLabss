@@ -18,15 +18,15 @@ export class StructDirective implements OnInit,DoCheck {
   ngDoCheck(){
     this.updateContent();
   }
-  private updateContent(){
+  private updateContent():void{
     this.container.clear();
     let i=0;
     while(i<this.dataSource.length){
-        this.container.createEmbeddedView(
-            this.template,
-            new StructIterator(this.dataSource[i])
-          );
-          i++
+      this.container.createEmbeddedView(
+        this.template,
+        new StructIterator(this.dataSource[i])
+      );
+      i++;
     }
   }
 }

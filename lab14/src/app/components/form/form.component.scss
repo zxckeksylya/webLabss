@@ -36,19 +36,19 @@
             width: 100%;
         }
     }
-    &__submit{
-        display: block;
-        padding: 5px 10px;
-        background-color: $second-ton;
-        border-radius: 5px;
-        border: 1px solid $nineth-ton ;
-        background: $first-ton;
-        transition:all 0.3s;
-        &:hover{
-            border-color:$nineth-ton ;
-            color: $first-ton;
-            background-color: $nineth-ton;
-        }
-    }
+    // &__submit{
+    //     display: block;
+    //     padding: 5px 10px;
+    //     background-color: $second-ton;
+    //     border-radius: 5px;
+    //     border: 1px solid $nineth-ton ;
+    //     background: $first-ton;
+    //     transition:all 0.3s;
+    //     &:hover{
+    //         border-color:$nineth-ton ;
+    //         color: $first-ton;
+    //         background-color: $nineth-ton;
+    //     }
+    // }
 
 }

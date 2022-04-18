@@ -8,6 +8,7 @@ import { AttrDirective } from './attr.directive';
 import { FormComponent } from './components/form/form.component';
 import { StructDirective } from './struct.directive';
 import { TableComponent } from './components/table/table.component';
+import { ComentsComponent } from './components/coments/coments.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TableComponent } from './components/table/table.component';
     TableComponent,
     AttrDirective,
     StructDirective,
+    ComentsComponent,
   ],
   imports: [
     BrowserModule,

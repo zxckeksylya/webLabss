@@ -6,6 +6,7 @@
         </div>
         <div class="list__item-text">
             <p>{{post.text}}</p>
+            <app-coments [coments]="post.coments" (addCom)="addComent($event,post.id!)" (delCom)="deleteComent($event,post.id!)"></app-coments>
         </div>
     </li>
     <!-- <ng-template [structDirOf]="posts" let-item>

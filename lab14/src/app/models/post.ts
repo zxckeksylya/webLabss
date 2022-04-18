@@ -6,6 +6,6 @@ export class Post{
         public title?:string,
         public text?:string,
         public date?:Date,
-        public coments?:Coment[]
+        public coments:Coment[]=[]
     ){}
 }

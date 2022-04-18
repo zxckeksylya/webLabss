@@ -1,0 +1,21 @@
+<div class="coments">
+    <div class="coments__form">
+        <label>оставить коментарий</label>
+        <input type="text" [(ngModel)]="coment.text">
+        <button class="btn" (click)="addComent()">add coment</button>
+    </div>
+    <ul class="coments__list">
+        <li class="coments__item" *ngFor="let item of coments">
+            <div class="coments__item-header">
+                <div>{{item.userId}}</div>
+                <div>{{item.date|date}}</div>
+            </div>
+            <div class="coments__item-body">
+                <p>
+                    {{item.text}}
+                </p>
+                <button class="btn" (click)="deleteComent(item.id!)">delete</button>
+            </div>
+        </li>
+    </ul>
+</div>
