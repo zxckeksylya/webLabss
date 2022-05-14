@@ -1,4 +1,6 @@
 @import "../../../colors.scss";
+
+
 .form{
     display: flex;
     flex-direction: column;
@@ -7,6 +9,11 @@
     border: 1px solid $nineth-ton;
     background-color: $third-ton;
     border-radius: 10px;
+
+    .alert{
+        background-color: lighten($color: red, $amount: 40);
+
+    }
     &__item{
         width: 100%;
         display: flex;
@@ -52,3 +59,10 @@
     // }
 
 }
+
+input.ng-touched.ng-invalid {
+    border: solid red 2px;
+  }
+  input.ng-touched.ng-valid {
+    border: solid green 2px;
+  }

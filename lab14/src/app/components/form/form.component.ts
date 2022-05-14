@@ -3,6 +3,7 @@ import { Post} from '../../models/post'
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { PostReposytory } from 'src/app/services/posts-repository';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -10,13 +11,23 @@ import { PostReposytory } from 'src/app/services/posts-repository';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  post:Post = new Post()
+  public myForm:FormGroup
+  constructor(private data:PostReposytory) { 
+    this.myForm = new FormGroup({
+      title: new FormControl('',[Validators.required]),
+      text: new FormControl('',[
+        Validators.required
+      ])
+    })
+  }
 
-  constructor(private data:PostReposytory) { }
-
-  addPost():void{
-    this.data.addPost(this.post)
-    this.post=new Post()
+  public addPost():void{
+    if(this.myForm.valid){
+      const {title,text} = this.myForm.getRawValue();
+      const post = new Post(undefined,title,text,undefined,undefined);
+      this.data.addPost(post)
+      this.myForm.reset();
+    }
   }
 
   ngOnInit(): void {

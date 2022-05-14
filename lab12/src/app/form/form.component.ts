@@ -10,7 +10,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  @Output() sizeChange = new EventEmitter<any>();
+  @Output() sizeChange = new EventEmitter<Post>();
   post:Post = new Post()
 
   constructor() { }

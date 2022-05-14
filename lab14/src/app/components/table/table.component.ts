@@ -23,6 +23,7 @@ export class TableComponent implements OnInit {
   deletePost(id:number){
     return this.data.deletePost(id);
   }
+  
   addComent(newComent:Coment,idOfPost:number){
     this.data.addComent(newComent,idOfPost);
     // console.log(newComent)

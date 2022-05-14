@@ -25,4 +25,10 @@ body{
       color: $first-ton;
       background-color: $nineth-ton;
     }
+    &:disabled{
+      background-color: $first-ton ;
+      border-color: $nineth-ton;
+      color:$third-ton;
+    }
   }
+

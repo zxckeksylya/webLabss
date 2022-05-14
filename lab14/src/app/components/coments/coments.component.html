@@ -1,9 +1,9 @@
 <div class="coments">
-    <div class="coments__form">
+    <form [formGroup]="myForm" novalidate class="coments__form" (ngSubmit)="addComent()">
         <label>оставить коментарий</label>
-        <input type="text" [(ngModel)]="coment.text">
-        <button class="btn" (click)="addComent()">add coment</button>
-    </div>
+        <input type="text" formControlName="text">
+        <button class="btn" [disabled]="!myForm.valid" type="submit">add coment</button>
+    </form>
     <ul class="coments__list">
         <li class="coments__item" *ngFor="let item of coments">
             <div class="coments__item-header">
