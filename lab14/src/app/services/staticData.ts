@@ -11,7 +11,7 @@ export class StaticData{
 
     constructor(){
         this.posts = [
-            new Post(1,'title1','text1',new Date(),[]),
+            new Post(1,'title1','Уж сколько их упало в эту бездну,\n Разверcтую вдали!\n Настанет день, когда и я исчезну\n С поверхности земли.',new Date(),[]),
             new Post(2,'title2','text2',new Date(),[]),
             new Post(3,'title3','text3',new Date(),[]),
             new Post(4,'title4','text4',new Date(),[]),

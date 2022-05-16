@@ -1,0 +1,5 @@
+<div class="list__item-text">
+    <p>{{post?.text}}</p>
+    <button class="btn" (click)="goToHome()">goHome</button>
+    <app-coments [coments]="post?.coments" (addCom)="addComent($event,post?.id!)" (delCom)="deleteComent($event,post?.id!)"></app-coments>
+</div>

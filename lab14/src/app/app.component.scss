@@ -6,19 +6,4 @@
   padding-right: 15px;
   margin: 0 auto;
 }
-.wrapper {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-}
 
-
-app-table {
-  flex-grow: 2;
-}
-@media screen and (max-width: 1300px) {
-  .wrapper {
-    flex-direction: column;
-  }
-}

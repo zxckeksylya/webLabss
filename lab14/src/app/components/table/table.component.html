@@ -1,13 +1,10 @@
 <ul class="list">
-    <li class="list__item" *ngFor="let post of posts">
+    <li class="list__item" *ngFor="let post of posts" (click)="rederectToPost(post.id!)">
         <div class="list__item-header" attr-dir [selectedColor]="'gray'" [selectedOpacity]=".8">
             <h3>{{post.title}}</h3>
             <span>{{post.date|date}}</span>
         </div>
-        <div class="list__item-text">
-            <p>{{post.text}}</p>
-            <app-coments [coments]="post.coments" (addCom)="addComent($event,post.id!)" (delCom)="deleteComent($event,post.id!)"></app-coments>
-        </div>
+        
     </li>
     <!-- <ng-template [structDirOf]="posts" let-item>
         <li class="list__item" >{{item.title}}</li>

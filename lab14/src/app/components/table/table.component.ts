@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Coment } from 'src/app/models/coment';
 import { PostReposytory } from 'src/app/services/posts-repository';
 import { Post } from '../../models/post';
@@ -11,7 +12,7 @@ import { Post } from '../../models/post';
 export class TableComponent implements OnInit {
   posts:Post[]=[];
 
-  constructor(private data:PostReposytory) { }
+  constructor(private data:PostReposytory,private router:Router) { }
   ngOnInit(): void {
    this.posts = this.data.getPosts();
   }
@@ -23,13 +24,8 @@ export class TableComponent implements OnInit {
   deletePost(id:number){
     return this.data.deletePost(id);
   }
-  
-  addComent(newComent:Coment,idOfPost:number){
-    this.data.addComent(newComent,idOfPost);
-    // console.log(newComent)
-    // console.log(idOfPost)
+  rederectToPost(key:number){
+    this.router.navigate(['/post',key])
   }
-  deleteComent(idOfComent:number,idPfPost:number){
-    this.data.deleteComent(idPfPost,idOfComent);
-  }
+
 }
